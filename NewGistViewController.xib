@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NewGistViewController" customModule="Gist" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="223" height="29"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-z0-rjH">
+                    <rect key="frame" x="10" y="4" width="178" height="21"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="NPy-S5-BjT">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="BsV-a9-pNJ"/>
+                    </connections>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-t4-uBx">
+                    <rect key="frame" x="192" y="2" width="27" height="23"/>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="xmark.circle.fill" catalog="system" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FH7-Lo-XIW">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="didTapCancelButton:" target="-2" id="R1H-Xk-F0h"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="kpl-t4-uBx" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="0zT-cN-ejF"/>
+                <constraint firstAttribute="trailing" secondItem="kpl-t4-uBx" secondAttribute="trailing" constant="5" id="H0c-4N-DTa"/>
+                <constraint firstItem="VKP-z0-rjH" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="NDA-iZ-guA"/>
+                <constraint firstItem="kpl-t4-uBx" firstAttribute="leading" secondItem="VKP-z0-rjH" secondAttribute="trailing" constant="5" id="OhS-0j-pbb"/>
+                <constraint firstAttribute="bottom" secondItem="kpl-t4-uBx" secondAttribute="bottom" constant="4" id="UBz-Jb-W3P"/>
+                <constraint firstItem="VKP-z0-rjH" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="4" id="XIA-Q0-mLw"/>
+                <constraint firstAttribute="bottom" secondItem="VKP-z0-rjH" secondAttribute="bottom" constant="4" id="vaT-r7-3kG"/>
+            </constraints>
+            <point key="canvasLocation" x="-127.5" y="122.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="xmark.circle.fill" catalog="system" width="15" height="15"/>
+    </resources>
+</document>
