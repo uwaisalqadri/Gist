@@ -7,13 +7,18 @@
 //
 
 import Cocoa
+import SwiftUI
+import HotKey
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate {
   
   @IBOutlet weak var window: NSWindow!
+  var newEntryPanel: FloatingPanel!
+  private let hotkey = HotKey(key: .g, modifiers: [.control, .command])
   
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+  
   lazy var editTodosWindowController: GistWindowController = {
     let viewController = GistWindowController(windowNibName: .init(String(describing: GistWindowController.self)))
     return viewController
@@ -21,6 +26,33 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     updateStatusItem()
+    
+    hotkey.keyDownHandler = { [weak self] in
+      guard let self = self else { return }
+      createFloatingPanel()
+      newEntryPanel.center()
+      newEntryPanel.orderFront(nil)
+      newEntryPanel.makeKey()
+    }
+  }
+  
+  private func createFloatingPanel() {
+    let contentView = PanelContentView { newGist in
+      guard !newGist.isEmpty else {
+        self.newEntryPanel.close()
+        return
+      }
+      
+      Preference.default.addGist(title: newGist)
+      self.updateStatusItem()
+      self.newEntryPanel.close()
+    }.edgesIgnoringSafeArea(.top)
+    
+    newEntryPanel = FloatingPanel(contentRect: NSRect(x: 0, y: 0, width: 512, height: 80), backing: .buffered, defer: false)
+    
+    let hostedView = NSHostingView(rootView: contentView)
+    hostedView.layer?.cornerRadius = 16
+    newEntryPanel.contentView = hostedView
   }
   
   func didUpdateGists(_ controller: GistWindowController) {

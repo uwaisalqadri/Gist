@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="223" height="29"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-z0-rjH">
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-z0-rjH">
                     <rect key="frame" x="10" y="4" width="178" height="21"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="NPy-S5-BjT">
                         <font key="font" metaFont="system"/>
