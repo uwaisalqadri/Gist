@@ -15,50 +15,71 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
   
   @IBOutlet weak var window: NSWindow!
   var newEntryPanel: FloatingPanel!
-  private let hotkey = HotKey(key: .g, modifiers: [.control, .command])
   
-  let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+  private let addGistHotkey = HotKey(key: .g, modifiers: [.control, .command])
+  private let editGistHotkey = HotKey(key: .e, modifiers: [.control, .command])
+  private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
   
-  lazy var editTodosWindowController: GistWindowController = {
-    let viewController = GistWindowController(windowNibName: .init(String(describing: GistWindowController.self)))
-    return viewController
+  private lazy var editTodosWindowController: GistWindowController = {
+    GistWindowController(
+      windowNibName: .init(String(describing: GistWindowController.self))
+    )
   }()
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     updateStatusItem()
     
-    hotkey.keyDownHandler = { [weak self] in
-      guard let self = self else { return }
-      createFloatingPanel()
-      newEntryPanel.center()
-      newEntryPanel.orderFront(nil)
-      newEntryPanel.makeKey()
+    addGistHotkey.keyDownHandler = { [weak self] in
+      self?.showFloatingPanel()
+    }
+    editGistHotkey.keyDownHandler = { [weak self] in
+      self?.showMainWindow()
     }
   }
   
-  private func createFloatingPanel() {
-    let contentView = PanelContentView { newGist in
-      guard !newGist.isEmpty else {
-        self.newEntryPanel.close()
-        return
-      }
-      
-      Preference.default.addGist(title: newGist)
-      self.updateStatusItem()
-      self.newEntryPanel.close()
-    }.edgesIgnoringSafeArea(.top)
-    
+  private func showFloatingPanel() {
     newEntryPanel = FloatingPanel(contentRect: NSRect(x: 0, y: 0, width: 512, height: 80), backing: .buffered, defer: false)
+    
+    let contentView = NewGistPanelView(
+      onSave: { newGist in
+        guard !newGist.isEmpty else {
+          self.newEntryPanel.close()
+          return
+        }
+        Preference.default.addGist(title: newGist)
+        self.updateStatusItem()
+        self.newEntryPanel.close()
+      },
+      onCancel: {
+        self.newEntryPanel.close()
+      }
+    ).edgesIgnoringSafeArea(.top)
     
     let hostedView = NSHostingView(rootView: contentView)
     hostedView.layer?.cornerRadius = 16
     newEntryPanel.contentView = hostedView
+    
+    newEntryPanel.center()
+    newEntryPanel.orderFront(nil)
+    newEntryPanel.makeKey()
+  }
+  
+  private func showMainWindow() {
+    NSApp.activate(ignoringOtherApps: true)
+    editTodosWindowController.delegate = self
+    editTodosWindowController.window?.center()
+    editTodosWindowController.window?.orderFrontRegardless()
+    editTodosWindowController.window?.makeFirstResponder(nil)
+    editTodosWindowController.tableView.reloadData()
   }
   
   func didUpdateGists(_ controller: GistWindowController) {
     updateStatusItem()
   }
-    
+}
+
+// MARK: Menu
+extension AppDelegate {
   override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
     if let item = menuItem.representedObject as? Gist {
       menuItem.state = item.isCompleted ? .on : .off
@@ -68,15 +89,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     return true
   }
   
-  // MARK: - Setup Status Item
-  
   private func updateStatusItem() {
     updateStatusItemButton()
     updateStatusItemMenu()
   }
   
   private func updateStatusItemButton() {
-    guard let button = statusItem.button else { return }
+    guard let button = statusBarItem.button else { return }
     let totalCount = Preference.default.gists.count
     let completedCount = Preference.default.gists.filter { $0.isCompleted }.count
     button.image = .init(named: .init("checkmark.square.fill"))?.tint(color: .white)
@@ -88,17 +107,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     let menu = NSMenu()
     createMenuItems(for: Preference.default.gists).forEach(menu.addItem)
     menu.addItem(NSMenuItem.separator())
-    menu.addItem(NSMenuItem(title: "Edit gists...", action: #selector(menuEditItemPressed), keyEquivalent: ""))
+    
+    let addItem = NSMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
+    addItem.keyEquivalentModifierMask =  [.control, .command]
+    menu.addItem(addItem)
+    
+    let editItem = NSMenuItem(title: "Edit gists...", action: #selector(menuEditGistPressed), keyEquivalent: "E")
+    editItem.keyEquivalentModifierMask = [.control, .command]
+    menu.addItem(editItem)
+    
     menu.addItem(NSMenuItem.separator())
     menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: ""))
     
-    statusItem.menu = menu
+    statusBarItem.menu = menu
   }
   
   private func createMenuItems(for gists: [Gist]) -> [NSMenuItem] {
     var items = [NSMenuItem]()
     gists.forEach { item in
-      let todo = NSMenuItem(title: item.title, action: #selector(menuTodoItemPressed), keyEquivalent: "")
+      let todo = NSMenuItem(title: item.title, action: #selector(menuGistPressed), keyEquivalent: "")
       todo.representedObject = item
       if item.isCompleted {
         let attributes: [NSAttributedStringKey: Any] = [
@@ -112,21 +139,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     }
     return items
   }
+}
+
+// MARK: Actions
+extension AppDelegate {
+  @objc private func menuAddGistPressed(_ sender: NSMenuItem) {
+    showFloatingPanel()
+  }
   
-  // MARK: - Menu Actions
-  
-  @objc private func menuTodoItemPressed(_ sender: NSMenuItem) {
+  @objc private func menuGistPressed(_ sender: NSMenuItem) {
     guard let item = sender.representedObject as? Gist else { return }
     item.isCompleted = !item.isCompleted
     updateStatusItem()
   }
   
-  @objc private func menuEditItemPressed(_ sender: NSMenuItem) {
-    NSApp.activate(ignoringOtherApps: true)
-    editTodosWindowController.delegate = self
-    editTodosWindowController.window?.center()
-    editTodosWindowController.window?.orderFrontRegardless()
-    editTodosWindowController.window?.makeFirstResponder(nil)
-    editTodosWindowController.tableView.reloadData()
+  @objc private func menuEditGistPressed(_ sender: NSMenuItem) {
+    showMainWindow()
   }
 }

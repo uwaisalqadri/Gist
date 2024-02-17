@@ -9,16 +9,54 @@
 import SwiftUI
 import Cocoa
 
+struct NewGistPanelView: View {
+  @State private var searchText: String = ""
+  var onSave: (String) -> Void
+  var onCancel: () -> Void
+  
+  var body: some View {
+    HStack {
+      Image(systemName: "text.badge.checkmark")
+        .resizable()
+        .frame(width: 20, height: 18)
+        .foregroundColor(Color(NSColor.lightGray.withAlphaComponent(0.3)))
+      
+      TextField("Add new gist...", text: $searchText, onCommit: {
+        onSave(searchText)
+      })
+        .textFieldStyle(.plain)
+        .frame(height: 50)
+        .font(.system(size: 20))
+        .padding(.leading, 8)
+        .background(Color.clear)
+      
+      Button(action: onCancel) {
+        Image(systemName: "xmark.circle.fill")
+          .resizable()
+          .frame(width: 17, height: 17)
+          .foregroundColor(Color(NSColor.lightGray))
+      }.buttonStyle(.plain)
+      
+    }
+    .padding(.vertical, 2)
+    .padding(.horizontal)
+    .background(VisualEffectView(material: .popover, blendingMode: .withinWindow))
+    .cornerRadius(8)
+  }
+}
+
+
 class FloatingPanel: NSPanel {
   init(contentRect: NSRect, backing: NSWindow.BackingStoreType, defer flag: Bool) {
     super.init(contentRect: contentRect, styleMask: [.nonactivatingPanel], backing: backing, defer: flag)
     self.isFloatingPanel = true
     self.level = .popUpMenu
     self.collectionBehavior.insert(.fullScreenAuxiliary)
-    self.titleVisibility = .hidden // Set title visibility to hidden
+    self.titleVisibility = .hidden
     self.titlebarAppearsTransparent = false
     self.isMovableByWindowBackground = false
     self.isReleasedWhenClosed = false
+    self.backgroundColor = .clear
     
     self.standardWindowButton(.closeButton)?.isHidden = true
     self.standardWindowButton(.miniaturizeButton)?.isHidden = true
@@ -31,35 +69,6 @@ class FloatingPanel: NSPanel {
   
   override var canBecomeMain: Bool {
     return true
-  }
-}
-
-struct PanelContentView: View {
-  @State private var searchText: String = ""
-  var onSave: (String) -> Void
-  
-  var body: some View {
-    HStack {
-      if let nsImage = NSImage(named: .init("checkmark.square.fill"))?.tint(color: .white) {
-        Image(nsImage: nsImage)
-          .resizable()
-          .frame(width: 30, height: 27)
-      }
-      
-      TextField("Add New Gist...", text: $searchText, onCommit: {
-        onSave(searchText)
-        
-      })
-        .textFieldStyle(.plain)
-        .frame(height: 50)
-        .font(.system(size: 20))
-        .padding(.leading, 5)
-        .background(Color.clear)
-    }
-    .padding(.vertical, 2)
-    .padding(.horizontal)
-    .background(VisualEffectView(material: .contentBackground, blendingMode: .withinWindow))
-    .cornerRadius(16)
   }
 }
 

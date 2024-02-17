@@ -74,10 +74,10 @@ class GistWindowController: NSWindowController, NSTableViewDelegate, NSTableView
   }
   
   @IBAction private func addButtonPressed(_ sender: NSButton) {
-    let addTodoViewController = NewGistViewController()
-    addTodoViewController.delegate = self
+    let newGistViewController = NewGistViewController()
+    newGistViewController.delegate = self
     guard let window = window else { return }
-    let panel = NSPanel(contentViewController: addTodoViewController)
+    let panel = NSPanel(contentViewController: newGistViewController)
     var styleMask = panel.styleMask
     styleMask.remove(.resizable)
     panel.styleMask = styleMask
