@@ -26,7 +26,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
       windowNibName: .init(String(describing: GistWindowController.self))
     )
   }()
-  
+
+  private var isLaunchAtStartup: Bool {
+    get {
+      return UserDefaults.standard.bool(forKey: "launchAtStartup")
+    }
+    set {
+      UserDefaults.standard.set(newValue, forKey: "launchAtStartup")
+    }
+  }
+
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     updateStatusItem()
     
@@ -118,7 +127,7 @@ extension AppDelegate {
     menu.addItem(NSMenuItem.separator())
     
     let addItem = NSMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
-    addItem.keyEquivalentModifierMask =  [.control, .command]
+    addItem.keyEquivalentModifierMask = [.control, .command]
     menu.addItem(addItem)
     
     let editItem = NSMenuItem(title: "Edit gists...", action: #selector(menuEditGistPressed), keyEquivalent: "E")
@@ -126,7 +135,9 @@ extension AppDelegate {
     menu.addItem(editItem)
 
     menu.addItem(NSMenuItem.separator())
-    menu.addItem(NSMenuItem(title: "Launch at startup", action: #selector(launchAtStartupPressed), keyEquivalent: ""))
+    let launchAtStartupItem = NSMenuItem(title: "Launch at startup", action: #selector(launchAtStartupPressed), keyEquivalent: "")
+    launchAtStartupItem.state = isLaunchAtStartup ? .on : .off
+    menu.addItem(launchAtStartupItem)
 
     menu.addItem(NSMenuItem.separator())
     menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: ""))
@@ -171,6 +182,13 @@ extension AppDelegate {
   }
 
   @objc private func launchAtStartupPressed(_ sender: NSMenuItem) {
-    print("Launch at startup")
+    let helperAppIdentifier = "com.nazaralwi.GistHelper"
+    let shouldEnable = !isLaunchAtStartup
+
+    SMLoginItemSetEnabled(helperAppIdentifier as CFString, shouldEnable)
+
+    isLaunchAtStartup = shouldEnable
+
+    sender.state = shouldEnable ? .on : .off
   }
 }
