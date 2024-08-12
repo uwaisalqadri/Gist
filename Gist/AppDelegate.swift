@@ -162,6 +162,7 @@ extension AppDelegate {
   @objc private func menuGistPressed(_ sender: NSMenuItem) {
     guard let item = sender.representedObject as? Gist else { return }
     item.isCompleted = !item.isCompleted
+    Preference.default.update(title: item.title, forGist: item)
     updateStatusItem()
   }
   
