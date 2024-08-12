@@ -36,6 +36,30 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     }
   }
 
+  private let helperAppBundleIdentifier = "com.nazaralwi.GistHelper"
+
+  private func registerHelperApp() {
+    let loginItem = SMAppService.loginItem(identifier: helperAppBundleIdentifier)
+
+    do {
+        try loginItem.register()
+        print("Helper app registered successfully.")
+    } catch {
+        print("Failed to register helper app: \(error.localizedDescription)")
+    }
+  }
+
+  private func unregisterHelperApp() {
+    let loginItem = SMAppService.loginItem(identifier: helperAppBundleIdentifier)
+
+    do {
+        try loginItem.unregister()
+        print("Helper app unregistered successfully.")
+    } catch {
+        print("Failed to unregister helper app: \(error.localizedDescription)")
+    }
+  }
+
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     updateStatusItem()
     
@@ -46,13 +70,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
       self?.showMainWindow()
     }
 
-    let helperAppIdentifier = "com.nazaralwi.GistHelper"
-    SMLoginItemSetEnabled(helperAppIdentifier as CFString, true)
+    registerHelperApp()
   }
 
   func applicationWillTerminate(_ notification: Notification) {
-    let helperAppIdentifier = "com.nazaralwi.GistHelper"
-    SMLoginItemSetEnabled(helperAppIdentifier as CFString, false)
+    unregisterHelperApp()
   }
 
   private func showFloatingPanel() {
@@ -182,12 +204,10 @@ extension AppDelegate {
   }
 
   @objc private func launchAtStartupPressed(_ sender: NSMenuItem) {
-    let helperAppIdentifier = "com.nazaralwi.GistHelper"
     let shouldEnable = !isLaunchAtStartup
-
-    SMLoginItemSetEnabled(helperAppIdentifier as CFString, shouldEnable)
-
     isLaunchAtStartup = shouldEnable
+
+    registerHelperApp()
 
     sender.state = shouldEnable ? .on : .off
   }

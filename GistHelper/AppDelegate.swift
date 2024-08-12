@@ -19,7 +19,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     components.append("Gist")
     let newPath = NSString.path(withComponents: components)
 
-    NSWorkspace.shared.launchApplication(newPath)
+    if let appURL = URL(string: newPath) {
+      let configuration = NSWorkspace.OpenConfiguration()
+      NSWorkspace.shared.openApplication(at: appURL, configuration: configuration) { (app, error) in
+        if let error = error {
+          print("Failed to launch application: \(error.localizedDescription)")
+        } else {
+          print("Application launched successfully.")
+        }
+      }
+    }
 
     NSApp.terminate(nil)
   }
