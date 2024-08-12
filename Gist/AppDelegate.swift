@@ -9,6 +9,7 @@
 import Cocoa
 import SwiftUI
 import HotKey
+import ServiceManagement
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate {
@@ -35,8 +36,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     editGistHotkey.keyDownHandler = { [weak self] in
       self?.showMainWindow()
     }
+
+    let helperAppIdentifier = "com.nazaralwi.GistHelper"
+    SMLoginItemSetEnabled(helperAppIdentifier as CFString, true)
   }
-  
+
+  func applicationWillTerminate(_ notification: Notification) {
+    let helperAppIdentifier = "com.nazaralwi.GistHelper"
+    SMLoginItemSetEnabled(helperAppIdentifier as CFString, false)
+  }
+
   private func showFloatingPanel() {
     newEntryPanel = FloatingPanel(contentRect: NSRect(x: 0, y: 0, width: 512, height: 80), backing: .buffered, defer: false)
     
@@ -115,7 +124,10 @@ extension AppDelegate {
     let editItem = NSMenuItem(title: "Edit gists...", action: #selector(menuEditGistPressed), keyEquivalent: "E")
     editItem.keyEquivalentModifierMask = [.control, .command]
     menu.addItem(editItem)
-    
+
+    menu.addItem(NSMenuItem.separator())
+    menu.addItem(NSMenuItem(title: "Launch at startup", action: #selector(launchAtStartupPressed), keyEquivalent: ""))
+
     menu.addItem(NSMenuItem.separator())
     menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: ""))
     
@@ -155,5 +167,9 @@ extension AppDelegate {
   
   @objc private func menuEditGistPressed(_ sender: NSMenuItem) {
     showMainWindow()
+  }
+
+  @objc private func launchAtStartupPressed(_ sender: NSMenuItem) {
+    print("Launch at startup")
   }
 }

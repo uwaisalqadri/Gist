@@ -22,7 +22,26 @@
 		CE4595892BB1C76500884863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE45957B2BB1C76500884863 /* Assets.xcassets */; };
 		CE45958A2BB1C76500884863 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE45957C2BB1C76500884863 /* Info.plist */; };
 		CE4595902BB1CD4300884863 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = CE45958F2BB1CD4300884863 /* HotKey */; };
+		E208F0242C69F9AD00E59F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208F0232C69F9AD00E59F88 /* AppDelegate.swift */; };
+		E208F0262C69F9AD00E59F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208F0252C69F9AD00E59F88 /* ViewController.swift */; };
+		E208F0282C69F9AF00E59F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E208F0272C69F9AF00E59F88 /* Assets.xcassets */; };
+		E208F02B2C69F9AF00E59F88 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E208F02A2C69F9AF00E59F88 /* Base */; };
+		E208F0312C69F9F900E59F88 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E208F0302C69F9F900E59F88 /* Info.plist */; };
+		E20B7CA92C69FC8400193EC6 /* GistHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = E208F0212C69F9AD00E59F88 /* GistHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E20B7CA82C69FC4100193EC6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				E20B7CA92C69FC8400193EC6 /* GistHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E545FC41E0AD7E500D19810 /* Gist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +59,13 @@
 		CE4595792BB1C76500884863 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE45957B2BB1C76500884863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE45957C2BB1C76500884863 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E208F0212C69F9AD00E59F88 /* GistHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E208F0232C69F9AD00E59F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E208F0252C69F9AD00E59F88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E208F0272C69F9AF00E59F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E208F02A2C69F9AF00E59F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E208F02C2C69F9AF00E59F88 /* GistHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GistHelper.entitlements; sourceTree = "<group>"; };
+		E208F0302C69F9F900E59F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +77,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E208F01E2C69F9AD00E59F88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -58,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CE45958D2BB1C95E00884863 /* Gist */,
+				E208F0222C69F9AD00E59F88 /* GistHelper */,
 				1E545FC51E0AD7E500D19810 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1E545FC41E0AD7E500D19810 /* Gist.app */,
+				E208F0212C69F9AD00E59F88 /* GistHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +150,19 @@
 			path = Gist;
 			sourceTree = "<group>";
 		};
+		E208F0222C69F9AD00E59F88 /* GistHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E208F0232C69F9AD00E59F88 /* AppDelegate.swift */,
+				E208F0252C69F9AD00E59F88 /* ViewController.swift */,
+				E208F0272C69F9AF00E59F88 /* Assets.xcassets */,
+				E208F0292C69F9AF00E59F88 /* Main.storyboard */,
+				E208F02C2C69F9AF00E59F88 /* GistHelper.entitlements */,
+				E208F0302C69F9F900E59F88 /* Info.plist */,
+			);
+			path = GistHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,6 +173,7 @@
 				1E545FC01E0AD7E500D19810 /* Sources */,
 				1E545FC11E0AD7E500D19810 /* Frameworks */,
 				1E545FC21E0AD7E500D19810 /* Resources */,
+				E20B7CA82C69FC4100193EC6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -138,13 +187,30 @@
 			productReference = 1E545FC41E0AD7E500D19810 /* Gist.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E208F0202C69F9AD00E59F88 /* GistHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E208F02D2C69F9AF00E59F88 /* Build configuration list for PBXNativeTarget "GistHelper" */;
+			buildPhases = (
+				E208F01D2C69F9AD00E59F88 /* Sources */,
+				E208F01E2C69F9AD00E59F88 /* Frameworks */,
+				E208F01F2C69F9AD00E59F88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GistHelper;
+			productName = GistHelper;
+			productReference = E208F0212C69F9AD00E59F88 /* GistHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1E545FBC1E0AD7E500D19810 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "github:uwaisalqadri";
 				TargetAttributes = {
@@ -152,6 +218,9 @@
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 1510;
 						ProvisioningStyle = Automatic;
+					};
+					E208F0202C69F9AD00E59F88 = {
+						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
@@ -173,6 +242,7 @@
 			projectRoot = "";
 			targets = (
 				1E545FC31E0AD7E500D19810 /* Gist */,
+				E208F0202C69F9AD00E59F88 /* GistHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +257,16 @@
 				CE4595892BB1C76500884863 /* Assets.xcassets in Resources */,
 				CE45958A2BB1C76500884863 /* Info.plist in Resources */,
 				CE4595812BB1C76500884863 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E208F01F2C69F9AD00E59F88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E208F0282C69F9AF00E59F88 /* Assets.xcassets in Resources */,
+				E208F02B2C69F9AF00E59F88 /* Base in Resources */,
+				E208F0312C69F9F900E59F88 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +289,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E208F01D2C69F9AD00E59F88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E208F0262C69F9AD00E59F88 /* ViewController.swift in Sources */,
+				E208F0242C69F9AD00E59F88 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -218,6 +307,14 @@
 				CE4595722BB1C76500884863 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E208F0292C69F9AF00E59F88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E208F02A2C69F9AF00E59F88 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -363,6 +460,100 @@
 			};
 			name = Release;
 		};
+		E208F02E2C69F9AF00E59F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = GistHelper/GistHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7DZF29DD8P;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 github:uwaisalqadri. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nazaralwi.GistHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E208F02F2C69F9AF00E59F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = GistHelper/GistHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7DZF29DD8P;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 github:uwaisalqadri. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nazaralwi.GistHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -380,6 +571,15 @@
 			buildConfigurations = (
 				1E545FD21E0AD7E500D19810 /* Debug */,
 				1E545FD31E0AD7E500D19810 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E208F02D2C69F9AF00E59F88 /* Build configuration list for PBXNativeTarget "GistHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E208F02E2C69F9AF00E59F88 /* Debug */,
+				E208F02F2C69F9AF00E59F88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
