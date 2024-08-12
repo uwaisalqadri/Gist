@@ -9,6 +9,7 @@
 import Cocoa
 import SwiftUI
 import HotKey
+import ServiceManagement
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate {
@@ -25,7 +26,40 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
       windowNibName: .init(String(describing: GistWindowController.self))
     )
   }()
-  
+
+  private var isLaunchAtStartup: Bool {
+    get {
+      return UserDefaults.standard.bool(forKey: "launchAtStartup")
+    }
+    set {
+      UserDefaults.standard.set(newValue, forKey: "launchAtStartup")
+    }
+  }
+
+  private let helperAppBundleIdentifier = "com.nazaralwi.GistHelper"
+
+  private func registerHelperApp() {
+    let loginItem = SMAppService.loginItem(identifier: helperAppBundleIdentifier)
+
+    do {
+        try loginItem.register()
+        print("Helper app registered successfully.")
+    } catch {
+        print("Failed to register helper app: \(error.localizedDescription)")
+    }
+  }
+
+  private func unregisterHelperApp() {
+    let loginItem = SMAppService.loginItem(identifier: helperAppBundleIdentifier)
+
+    do {
+        try loginItem.unregister()
+        print("Helper app unregistered successfully.")
+    } catch {
+        print("Failed to unregister helper app: \(error.localizedDescription)")
+    }
+  }
+
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     updateStatusItem()
     
@@ -35,8 +69,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     editGistHotkey.keyDownHandler = { [weak self] in
       self?.showMainWindow()
     }
+
+    registerHelperApp()
   }
-  
+
+  func applicationWillTerminate(_ notification: Notification) {
+    unregisterHelperApp()
+  }
+
   private func showFloatingPanel() {
     newEntryPanel = FloatingPanel(contentRect: NSRect(x: 0, y: 0, width: 512, height: 80), backing: .buffered, defer: false)
     
@@ -109,13 +149,18 @@ extension AppDelegate {
     menu.addItem(NSMenuItem.separator())
     
     let addItem = NSMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
-    addItem.keyEquivalentModifierMask =  [.control, .command]
+    addItem.keyEquivalentModifierMask = [.control, .command]
     menu.addItem(addItem)
     
     let editItem = NSMenuItem(title: "Edit gists...", action: #selector(menuEditGistPressed), keyEquivalent: "E")
     editItem.keyEquivalentModifierMask = [.control, .command]
     menu.addItem(editItem)
-    
+
+    menu.addItem(NSMenuItem.separator())
+    let launchAtStartupItem = NSMenuItem(title: "Launch at startup", action: #selector(launchAtStartupPressed), keyEquivalent: "")
+    launchAtStartupItem.state = isLaunchAtStartup ? .on : .off
+    menu.addItem(launchAtStartupItem)
+
     menu.addItem(NSMenuItem.separator())
     menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: ""))
     
@@ -150,10 +195,20 @@ extension AppDelegate {
   @objc private func menuGistPressed(_ sender: NSMenuItem) {
     guard let item = sender.representedObject as? Gist else { return }
     item.isCompleted = !item.isCompleted
+    Preference.default.update(title: item.title, forGist: item)
     updateStatusItem()
   }
   
   @objc private func menuEditGistPressed(_ sender: NSMenuItem) {
     showMainWindow()
+  }
+
+  @objc private func launchAtStartupPressed(_ sender: NSMenuItem) {
+    let shouldEnable = !isLaunchAtStartup
+    isLaunchAtStartup = shouldEnable
+
+    registerHelperApp()
+
+    sender.state = shouldEnable ? .on : .off
   }
 }
