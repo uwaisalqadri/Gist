@@ -9,7 +9,6 @@
 import Cocoa
 import SwiftUI
 import HotKey
-import ServiceManagement
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate {
@@ -27,39 +26,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     )
   }()
 
-  private var isLaunchAtStartup: Bool {
-    get {
-      return UserDefaults.standard.bool(forKey: "launchAtStartup")
-    }
-    set {
-      UserDefaults.standard.set(newValue, forKey: "launchAtStartup")
-    }
-  }
-
-  private let helperAppBundleIdentifier = "com.nazaralwi.GistHelper"
-
-  private func registerHelperApp() {
-    let loginItem = SMAppService.loginItem(identifier: helperAppBundleIdentifier)
-
-    do {
-        try loginItem.register()
-        print("Helper app registered successfully.")
-    } catch {
-        print("Failed to register helper app: \(error.localizedDescription)")
-    }
-  }
-
-  private func unregisterHelperApp() {
-    let loginItem = SMAppService.loginItem(identifier: helperAppBundleIdentifier)
-
-    do {
-        try loginItem.unregister()
-        print("Helper app unregistered successfully.")
-    } catch {
-        print("Failed to unregister helper app: \(error.localizedDescription)")
-    }
-  }
-
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     updateStatusItem()
     
@@ -70,11 +36,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
       self?.showMainWindow()
     }
 
-    registerHelperApp()
+    GistHelper.registerHelperApp()
   }
 
   func applicationWillTerminate(_ notification: Notification) {
-    unregisterHelperApp()
+    GistHelper.unregisterHelperApp()
   }
 
   private func showFloatingPanel() {
@@ -136,53 +102,27 @@ extension AppDelegate {
   
   private func updateStatusItemButton() {
     guard let button = statusBarItem.button else { return }
-    let totalCount = Preference.default.gists.count
-    let completedCount = Preference.default.gists.filter { $0.isCompleted }.count
+    
+    let items = Preference.default.gists
+    let totalCount = items.count
+    let completedCount = items.filter(\.isCompleted).count
+    
     button.image = .init(named: .init("checkmark.square.fill"))?.tint(color: .white)
     button.image?.size = .init(width: 20, height: 17)
     button.title = " \(completedCount)/\(totalCount)"
   }
   
   private func updateStatusItemMenu() {
-    let menu = NSMenu()
-    createMenuItems(for: Preference.default.gists).forEach(menu.addItem)
-    menu.addItem(NSMenuItem.separator())
-    
-    let addItem = NSMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
-    addItem.keyEquivalentModifierMask = [.control, .command]
-    menu.addItem(addItem)
-    
-    let editItem = NSMenuItem(title: "Edit gists...", action: #selector(menuEditGistPressed), keyEquivalent: "E")
-    editItem.keyEquivalentModifierMask = [.control, .command]
-    menu.addItem(editItem)
-
-    menu.addItem(NSMenuItem.separator())
-    let launchAtStartupItem = NSMenuItem(title: "Launch at startup", action: #selector(launchAtStartupPressed), keyEquivalent: "")
-    launchAtStartupItem.state = isLaunchAtStartup ? .on : .off
-    menu.addItem(launchAtStartupItem)
-
-    menu.addItem(NSMenuItem.separator())
-    menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: ""))
-    
-    statusBarItem.menu = menu
-  }
-  
-  private func createMenuItems(for gists: [Gist]) -> [NSMenuItem] {
-    var items = [NSMenuItem]()
-    gists.forEach { item in
-      let todo = NSMenuItem(title: item.title, action: #selector(menuGistPressed), keyEquivalent: "")
-      todo.representedObject = item
-      if item.isCompleted {
-        let attributes: [NSAttributedStringKey: Any] = [
-          .strikethroughStyle: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue),
-          .font: NSFont.menuBarFont(ofSize: 0)
-        ]
-        let attributedString = NSAttributedString(string: item.title, attributes: attributes)
-        todo.attributedTitle = attributedString
-      }
-      items.append(todo)
-    }
-    return items
+    statusBarItem.menu = MenuBuilder()
+      .addGistItems(from: Preference.default.gists, action: #selector(menuGistPressed))
+      .addSeparator()
+      .addMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
+      .addMenuItem(title: "Edit gists...", action: #selector(menuEditGistPressed), keyEquivalent: "E")
+      .addSeparator()
+      .addLaunchAtStartupItem(isEnabled: GistHelper.isLaunchAtStartup, action: #selector(launchAtStartupPressed))
+      .addSeparator()
+      .addQuitItem()
+      .build()
   }
 }
 
@@ -193,9 +133,9 @@ extension AppDelegate {
   }
   
   @objc private func menuGistPressed(_ sender: NSMenuItem) {
-    guard let item = sender.representedObject as? Gist else { return }
-    item.isCompleted = !item.isCompleted
-    Preference.default.update(title: item.title, forGist: item)
+    guard let gist = sender.representedObject as? Gist else { return }
+    gist.isCompleted.toggle()
+    Preference.default.update(title: gist.title, forGist: gist)
     updateStatusItem()
   }
   
@@ -204,11 +144,8 @@ extension AppDelegate {
   }
 
   @objc private func launchAtStartupPressed(_ sender: NSMenuItem) {
-    let shouldEnable = !isLaunchAtStartup
-    isLaunchAtStartup = shouldEnable
-
-    registerHelperApp()
-
-    sender.state = shouldEnable ? .on : .off
+    GistHelper.isLaunchAtStartup.toggle()
+    GistHelper.registerHelperApp()
+    sender.state = !GistHelper.isLaunchAtStartup ? .on : .off
   }
 }
