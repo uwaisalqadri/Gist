@@ -96,11 +96,11 @@ extension AppDelegate {
   }
   
   private func updateStatusItem() {
-    updateStatusItemButton()
-    updateStatusItemMenu()
+    updateStatusButton()
+    updateStatusMenu()
   }
   
-  private func updateStatusItemButton() {
+  private func updateStatusButton() {
     guard let button = statusBarItem.button else { return }
     
     let items = Preference.default.gists
@@ -112,13 +112,15 @@ extension AppDelegate {
     button.title = " \(completedCount)/\(totalCount)"
   }
   
-  private func updateStatusItemMenu() {
+  private func updateStatusMenu() {
+    let isCompletedEmpty = Preference.default.gists.filter(\.isCompleted).isEmpty
     statusBarItem.menu = MenuBuilder()
       .addGistItems(from: Preference.default.gists, action: #selector(menuGistPressed))
       .addSeparator()
       .addMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
-      .addMenuItem(title: "Edit gists...", action: #selector(menuEditGistPressed), keyEquivalent: "E")
+      .addMenuItem(title: "Copy completed", action: #selector(didCopyCompleted), isHidden: isCompletedEmpty)
       .addSeparator()
+      .addMenuItem(title: "Open app", action: #selector(menuEditGistPressed), keyEquivalent: "E")
       .addLaunchAtStartupItem(isEnabled: GistHelper.isLaunchAtStartup, action: #selector(launchAtStartupPressed))
       .addSeparator()
       .addQuitItem()
@@ -142,10 +144,18 @@ extension AppDelegate {
   @objc private func menuEditGistPressed(_ sender: NSMenuItem) {
     showMainWindow()
   }
+  
+  @objc private func didCopyCompleted(_ sender: NSMenuItem) {
+    let completedGists = Preference.default.gists.filter(\.isCompleted)
+    let pasteboard = NSPasteboard.general
+    pasteboard.declareTypes([.string], owner: nil)
+    pasteboard.setString(completedGists.buildStringList(), forType: .string)
+  }
 
   @objc private func launchAtStartupPressed(_ sender: NSMenuItem) {
     GistHelper.isLaunchAtStartup.toggle()
     GistHelper.registerHelperApp()
     sender.state = !GistHelper.isLaunchAtStartup ? .on : .off
+    updateStatusMenu()
   }
 }

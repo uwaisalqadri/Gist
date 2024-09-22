@@ -26,3 +26,9 @@ final class Gist: NSObject, NSCoding {
     aCoder.encode(isCompleted, forKey: "isCompleted")
   }
 }
+
+extension Array where Element == Gist {
+  func buildStringList() -> String {
+    return self.map({ "- \($0.title)" }).reversed().joined(separator: "\n")
+  }
+}

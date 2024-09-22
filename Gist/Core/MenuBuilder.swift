@@ -19,9 +19,10 @@ class MenuBuilder {
   }
   
   @discardableResult
-  func addMenuItem(title: String, action: Selector, keyEquivalent: String, modifiers: NSEvent.ModifierFlags = [.control, .command]) -> MenuBuilder {
+  func addMenuItem(title: String, action: Selector, keyEquivalent: String = "", modifiers: NSEvent.ModifierFlags = [.control, .command], isHidden: Bool = false) -> MenuBuilder {
     let menuItem = NSMenuItem(title: title, action: action, keyEquivalent: keyEquivalent)
     menuItem.keyEquivalentModifierMask = modifiers
+    menuItem.isHidden = isHidden
     menu.addItem(menuItem)
     return self
   }
