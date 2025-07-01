@@ -13,7 +13,7 @@ Gist is a macOS todo app with simple functionality created so people don't have 
 
 | Gist Edit Window                           | Gist Status Bar                           | Gist Quick Add                           |
 |----------------------------------------|----------------------------------------|----------------------------------------|
-| ![Screenshot 2024-04-01 at 12 30 44 AM](https://github.com/uwaisalqadri/Gist/assets/55146646/0ec502b5-9349-45f2-ab00-9dbaefbbf002) | ![Screenshot 2024-03-28 at 10 54 13 AM](https://github.com/uwaisalqadri/Gist/assets/55146646/f3493d39-3c8d-4830-9614-6379f9ef8cf9) | ![Screenshot 2024-04-01 at 12 29 49 AM](https://github.com/uwaisalqadri/Gist/assets/55146646/5c90b1e5-c4f9-4315-80c5-71ec33b901ea) |
+|  |  |  |
 
 ## Download Versions
 
