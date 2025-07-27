@@ -11,6 +11,7 @@ import Cocoa
 
 struct NewGistPanelView: View {
   @State private var searchText: String = ""
+  @FocusState private var isTextFieldFocused: Bool
   var onSave: (String) -> Void
   var onCancel: () -> Void
   
@@ -24,6 +25,7 @@ struct NewGistPanelView: View {
       TextField("Add new gist...", text: $searchText, onCommit: {
         onSave(searchText)
       })
+        .focused($isTextFieldFocused)
         .textFieldStyle(.plain)
         .frame(height: 50)
         .font(.system(size: 20))
@@ -42,6 +44,9 @@ struct NewGistPanelView: View {
     .padding(.horizontal)
     .background(VisualEffectView(material: .popover, blendingMode: .withinWindow))
     .cornerRadius(8)
+    .onAppear {
+      isTextFieldFocused = true
+    }
   }
 }
 
