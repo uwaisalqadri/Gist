@@ -3,335 +3,368 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		863A2E3D2C9D5C31007E9A82 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A2E3C2C9D5C31007E9A82 /* Helper.swift */; };
-		86831E262C9D27EA004750B4 /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86831E252C9D27EA004750B4 /* MenuBuilder.swift */; };
-		CE45957D2BB1C76500884863 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45956C2BB1C76500884863 /* Extensions.swift */; };
-		CE45957E2BB1C76500884863 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45956D2BB1C76500884863 /* Gist.swift */; };
-		CE45957F2BB1C76500884863 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45956E2BB1C76500884863 /* Preference.swift */; };
-		CE4595802BB1C76500884863 /* GistTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4595702BB1C76500884863 /* GistTableCellView.swift */; };
-		CE4595812BB1C76500884863 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4595712BB1C76500884863 /* MainMenu.xib */; };
-		CE4595822BB1C76500884863 /* GistWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4595732BB1C76500884863 /* GistWindowController.swift */; };
-		CE4595832BB1C76500884863 /* NewGistPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4595742BB1C76500884863 /* NewGistPanelView.swift */; };
-		CE4595842BB1C76500884863 /* GistWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4595752BB1C76500884863 /* GistWindowController.xib */; };
-		CE4595852BB1C76500884863 /* NewGistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4595762BB1C76500884863 /* NewGistViewController.xib */; };
-		CE4595862BB1C76500884863 /* NewGistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4595772BB1C76500884863 /* NewGistViewController.swift */; };
-		CE4595872BB1C76500884863 /* CheckboxTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4595782BB1C76500884863 /* CheckboxTableCellView.swift */; };
-		CE4595882BB1C76500884863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4595792BB1C76500884863 /* AppDelegate.swift */; };
-		CE4595892BB1C76500884863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE45957B2BB1C76500884863 /* Assets.xcassets */; };
-		CE4595902BB1CD4300884863 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = CE45958F2BB1CD4300884863 /* HotKey */; };
-		E208F0242C69F9AD00E59F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208F0232C69F9AD00E59F88 /* AppDelegate.swift */; };
-		E208F0282C69F9AF00E59F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E208F0272C69F9AF00E59F88 /* Assets.xcassets */; };
-		E208F02B2C69F9AF00E59F88 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E208F02A2C69F9AF00E59F88 /* Base */; };
-		E208F0312C69F9F900E59F88 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E208F0302C69F9F900E59F88 /* Info.plist */; };
-		E20B7CA92C69FC8400193EC6 /* GistHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = E208F0212C69F9AD00E59F88 /* GistHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D6057189A77D34164D6D89C /* NewGistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0BFE8A64096BABDF1D9526 /* NewGistViewController.xib */; };
+		196A59D68312953EBB184C79 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9192AD7AE86D1A6B83052 /* Helper.swift */; };
+		2D42FEFC7DC053F2F13DDA67 /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE81CACE7B7A215EE34D72C /* MenuBuilder.swift */; };
+		4AB335F9B776ED7714E88001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B9556F3BC3F1536B39499 /* AppDelegate.swift */; };
+		586109BBE93C4805D6338DBB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57467CB9D81B3238606BA2FB /* Extensions.swift */; };
+		5C6E08BA391B396F9FB98B95 /* CheckboxTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AF2D48C72CD67289DBD5C4 /* CheckboxTableCellView.swift */; };
+		5F48AE98644BA5C0B3924621 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525334CFF41BE4058EACAD40 /* Main.storyboard */; };
+		64C53A835DF71DDA955D7C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638BAAC7E5548F0470C4770A /* Assets.xcassets */; };
+		6F18E8F971C33F487ECA9605 /* GistWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D41728FC12B48034E0411CB /* GistWindowController.xib */; };
+		85BA88B92FCC2AA60FAC2537 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788D6EB50EE505128584362B /* MainMenu.xib */; };
+		874998B99D6F006FFE4101CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A9CB6F878C749B28785CEF /* Assets.xcassets */; };
+		8DF9DDBF27424752C3B0EC35 /* NewGistPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4091FBEC61C0E1F08870247 /* NewGistPanelView.swift */; };
+		973C73BB04A96B60A7565F00 /* GistHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = AA2FE20133D868AF11A5BE9C /* GistHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A9DC457BBC920BB12ED015DE /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABFBA30C556A44090A0469 /* Gist.swift */; };
+		B94761ED154AA5C9DBA68D4E /* GistWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9890C58C684D8E3E223707B /* GistWindowController.swift */; };
+		BA86B7B0408837C9A53840C0 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4072D0F8A5EF426B0A11932 /* Preference.swift */; };
+		CBD4894F523793C98838E207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB0E43AD39BB6564E2B86 /* AppDelegate.swift */; };
+		EA8A842923BC0C4F785330A5 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 952F5CDA5BFBA583CCF3091E /* HotKey */; };
+		F08F088AD3ABE7C233B0A1CF /* NewGistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127C1FBA92206D3793E05A /* NewGistViewController.swift */; };
+		F100481BD2324DCF97CE2A47 /* GistTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010604618C2D7E7C2A75837 /* GistTableCellView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E20B7CA82C69FC4100193EC6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LoginItems;
-			dstSubfolderSpec = 1;
-			files = (
-				E20B7CA92C69FC8400193EC6 /* GistHelper.app in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		439D4E631C67F192EEA0F545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6E756086AF2884EE3361C95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8A8F7E6AF66BB846D3204CE;
+			remoteInfo = GistHelper;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E545FC41E0AD7E500D19810 /* Gist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gist.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		863A2E3C2C9D5C31007E9A82 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		86831E252C9D27EA004750B4 /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
-		86EE5AE42E3664AB008B10EC /* Gist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gist.entitlements; sourceTree = "<group>"; };
-		CE45956C2BB1C76500884863 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CE45956D2BB1C76500884863 /* Gist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
-		CE45956E2BB1C76500884863 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
-		CE4595702BB1C76500884863 /* GistTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistTableCellView.swift; sourceTree = "<group>"; };
-		CE4595722BB1C76500884863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		CE4595732BB1C76500884863 /* GistWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistWindowController.swift; sourceTree = "<group>"; };
-		CE4595742BB1C76500884863 /* NewGistPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGistPanelView.swift; sourceTree = "<group>"; };
-		CE4595752BB1C76500884863 /* GistWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GistWindowController.xib; sourceTree = "<group>"; };
-		CE4595762BB1C76500884863 /* NewGistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGistViewController.xib; sourceTree = "<group>"; };
-		CE4595772BB1C76500884863 /* NewGistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGistViewController.swift; sourceTree = "<group>"; };
-		CE4595782BB1C76500884863 /* CheckboxTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxTableCellView.swift; sourceTree = "<group>"; };
-		CE4595792BB1C76500884863 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE45957B2BB1C76500884863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE45957C2BB1C76500884863 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E208F0212C69F9AD00E59F88 /* GistHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E208F0232C69F9AD00E59F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E208F0272C69F9AF00E59F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E208F02A2C69F9AF00E59F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E208F02C2C69F9AF00E59F88 /* GistHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GistHelper.entitlements; sourceTree = "<group>"; };
-		E208F0302C69F9F900E59F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00A9CB6F878C749B28785CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		057BC75301D27590394088B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1010604618C2D7E7C2A75837 /* GistTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistTableCellView.swift; sourceTree = "<group>"; };
+		2306D568215A098802A23D47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BE81CACE7B7A215EE34D72C /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
+		2FABFBA30C556A44090A0469 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
+		4FC9192AD7AE86D1A6B83052 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		52BBB0E43AD39BB6564E2B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57467CB9D81B3238606BA2FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		638BAAC7E5548F0470C4770A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76AF2D48C72CD67289DBD5C4 /* CheckboxTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTableCellView.swift; sourceTree = "<group>"; };
+		7AFE33C74EEB6ABEAEE0098C /* Gist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gist.entitlements; sourceTree = "<group>"; };
+		98554FA102E49464F9C11A7C /* GistHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GistHelper.entitlements; sourceTree = "<group>"; };
+		9D41728FC12B48034E0411CB /* GistWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistWindowController.xib; sourceTree = "<group>"; };
+		A5487E63B7E13009B50346C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AA2FE20133D868AF11A5BE9C /* GistHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD2F7CA3B865E03DDF3EA8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC127C1FBA92206D3793E05A /* NewGistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGistViewController.swift; sourceTree = "<group>"; };
+		BBB6952791515D501F5EDE38 /* Gist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE0BFE8A64096BABDF1D9526 /* NewGistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewGistViewController.xib; sourceTree = "<group>"; };
+		C4072D0F8A5EF426B0A11932 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		C9890C58C684D8E3E223707B /* GistWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistWindowController.swift; sourceTree = "<group>"; };
+		F32B9556F3BC3F1536B39499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4091FBEC61C0E1F08870247 /* NewGistPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGistPanelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1E545FC11E0AD7E500D19810 /* Frameworks */ = {
+		4C63F2A04C2B79DEFE7B5BB6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4595902BB1CD4300884863 /* HotKey in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E208F01E2C69F9AD00E59F88 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				EA8A842923BC0C4F785330A5 /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E545FBB1E0AD7E500D19810 = {
+		24A1DE7759F8DB52BA1FCE1B /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				CE45958D2BB1C95E00884863 /* Gist */,
-				E208F0222C69F9AD00E59F88 /* GistHelper */,
-				1E545FC51E0AD7E500D19810 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		1E545FC51E0AD7E500D19810 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1E545FC41E0AD7E500D19810 /* Gist.app */,
-				E208F0212C69F9AD00E59F88 /* GistHelper.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CE45956B2BB1C76500884863 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				CE45956C2BB1C76500884863 /* Extensions.swift */,
-				CE45956D2BB1C76500884863 /* Gist.swift */,
-				CE45956E2BB1C76500884863 /* Preference.swift */,
-				86831E252C9D27EA004750B4 /* MenuBuilder.swift */,
-				863A2E3C2C9D5C31007E9A82 /* Helper.swift */,
+				57467CB9D81B3238606BA2FB /* Extensions.swift */,
+				2FABFBA30C556A44090A0469 /* Gist.swift */,
+				4FC9192AD7AE86D1A6B83052 /* Helper.swift */,
+				2BE81CACE7B7A215EE34D72C /* MenuBuilder.swift */,
+				C4072D0F8A5EF426B0A11932 /* Preference.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		CE45956F2BB1C76500884863 /* Views */ = {
+		9B1CC74302453C86E0C76A80 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE4595702BB1C76500884863 /* GistTableCellView.swift */,
-				CE4595712BB1C76500884863 /* MainMenu.xib */,
-				CE4595732BB1C76500884863 /* GistWindowController.swift */,
-				CE4595742BB1C76500884863 /* NewGistPanelView.swift */,
-				CE4595752BB1C76500884863 /* GistWindowController.xib */,
-				CE4595762BB1C76500884863 /* NewGistViewController.xib */,
-				CE4595772BB1C76500884863 /* NewGistViewController.swift */,
-				CE4595782BB1C76500884863 /* CheckboxTableCellView.swift */,
+				76AF2D48C72CD67289DBD5C4 /* CheckboxTableCellView.swift */,
+				1010604618C2D7E7C2A75837 /* GistTableCellView.swift */,
+				C9890C58C684D8E3E223707B /* GistWindowController.swift */,
+				9D41728FC12B48034E0411CB /* GistWindowController.xib */,
+				788D6EB50EE505128584362B /* MainMenu.xib */,
+				F4091FBEC61C0E1F08870247 /* NewGistPanelView.swift */,
+				AC127C1FBA92206D3793E05A /* NewGistViewController.swift */,
+				BE0BFE8A64096BABDF1D9526 /* NewGistViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CE45957A2BB1C76500884863 /* Resources */ = {
+		BF4A9062ECF09A75E6C80CE4 /* Gist */ = {
 			isa = PBXGroup;
 			children = (
-				CE45957B2BB1C76500884863 /* Assets.xcassets */,
-				CE45957C2BB1C76500884863 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		CE45958D2BB1C95E00884863 /* Gist */ = {
-			isa = PBXGroup;
-			children = (
-				86EE5AE42E3664AB008B10EC /* Gist.entitlements */,
-				CE4595792BB1C76500884863 /* AppDelegate.swift */,
-				CE45956B2BB1C76500884863 /* Core */,
-				CE45957A2BB1C76500884863 /* Resources */,
-				CE45956F2BB1C76500884863 /* Views */,
+				F32B9556F3BC3F1536B39499 /* AppDelegate.swift */,
+				7AFE33C74EEB6ABEAEE0098C /* Gist.entitlements */,
+				24A1DE7759F8DB52BA1FCE1B /* Core */,
+				FFA98818E5844E6DEE41FBF7 /* Resources */,
+				9B1CC74302453C86E0C76A80 /* Views */,
 			);
 			path = Gist;
 			sourceTree = "<group>";
 		};
-		E208F0222C69F9AD00E59F88 /* GistHelper */ = {
+		CE3886DDF62A69D7914F49B8 = {
 			isa = PBXGroup;
 			children = (
-				E208F0232C69F9AD00E59F88 /* AppDelegate.swift */,
-				E208F0272C69F9AF00E59F88 /* Assets.xcassets */,
-				E208F0292C69F9AF00E59F88 /* Main.storyboard */,
-				E208F02C2C69F9AF00E59F88 /* GistHelper.entitlements */,
-				E208F0302C69F9F900E59F88 /* Info.plist */,
+				BF4A9062ECF09A75E6C80CE4 /* Gist */,
+				F2EB6745B2EC38671C2B64A6 /* GistHelper */,
+				F1AF2D2BB0493E99F37FC84E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1AF2D2BB0493E99F37FC84E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBB6952791515D501F5EDE38 /* Gist.app */,
+				AA2FE20133D868AF11A5BE9C /* GistHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2EB6745B2EC38671C2B64A6 /* GistHelper */ = {
+			isa = PBXGroup;
+			children = (
+				52BBB0E43AD39BB6564E2B86 /* AppDelegate.swift */,
+				00A9CB6F878C749B28785CEF /* Assets.xcassets */,
+				98554FA102E49464F9C11A7C /* GistHelper.entitlements */,
+				AAD2F7CA3B865E03DDF3EA8E /* Info.plist */,
+				525334CFF41BE4058EACAD40 /* Main.storyboard */,
 			);
 			path = GistHelper;
+			sourceTree = "<group>";
+		};
+		FFA98818E5844E6DEE41FBF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				638BAAC7E5548F0470C4770A /* Assets.xcassets */,
+				A5487E63B7E13009B50346C8 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1E545FC31E0AD7E500D19810 /* Gist */ = {
+		A3CF454D42DB81B7D461821E /* Gist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1E545FD11E0AD7E500D19810 /* Build configuration list for PBXNativeTarget "Gist" */;
+			buildConfigurationList = E18E62498825617D8307384F /* Build configuration list for PBXNativeTarget "Gist" */;
 			buildPhases = (
-				1E545FC01E0AD7E500D19810 /* Sources */,
-				1E545FC11E0AD7E500D19810 /* Frameworks */,
-				1E545FC21E0AD7E500D19810 /* Resources */,
-				E20B7CA82C69FC4100193EC6 /* CopyFiles */,
+				85F44443074343640CAA82F5 /* Sources */,
+				D6EB9C7A64FC87376A0C07DD /* Resources */,
+				4C63F2A04C2B79DEFE7B5BB6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2B76E6F4CFBFD64DAFB4FF41 /* PBXTargetDependency */,
 			);
 			name = Gist;
 			packageProductDependencies = (
-				CE45958F2BB1CD4300884863 /* HotKey */,
+				952F5CDA5BFBA583CCF3091E /* HotKey */,
 			);
-			productName = "todo-status-bar";
-			productReference = 1E545FC41E0AD7E500D19810 /* Gist.app */;
+			productName = Gist;
+			productReference = BBB6952791515D501F5EDE38 /* Gist.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E208F0202C69F9AD00E59F88 /* GistHelper */ = {
+		A8A8F7E6AF66BB846D3204CE /* GistHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E208F02D2C69F9AF00E59F88 /* Build configuration list for PBXNativeTarget "GistHelper" */;
+			buildConfigurationList = D627A0BF544428D943160359 /* Build configuration list for PBXNativeTarget "GistHelper" */;
 			buildPhases = (
-				E208F01D2C69F9AD00E59F88 /* Sources */,
-				E208F01E2C69F9AD00E59F88 /* Frameworks */,
-				E208F01F2C69F9AD00E59F88 /* Resources */,
+				561C032D2621347D4EC7C0B0 /* Sources */,
+				83E59F8E988163F19B694070 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GistHelper;
+			packageProductDependencies = (
+			);
 			productName = GistHelper;
-			productReference = E208F0212C69F9AD00E59F88 /* GistHelper.app */;
+			productReference = AA2FE20133D868AF11A5BE9C /* GistHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1E545FBC1E0AD7E500D19810 /* Project object */ = {
+		E6E756086AF2884EE3361C95 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1540;
-				ORGANIZATIONNAME = "Uwais Alqadri";
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					1E545FC31E0AD7E500D19810 = {
-						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 1510;
+					A3CF454D42DB81B7D461821E = {
+						ProvisioningStyle = Automatic;
 					};
-					E208F0202C69F9AD00E59F88 = {
-						CreatedOnToolsVersion = 15.3;
+					A8A8F7E6AF66BB846D3204CE = {
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 1E545FBF1E0AD7E500D19810 /* Build configuration list for PBXProject "Gist" */;
+			buildConfigurationList = 9FEA49D77E21034E24517AB6 /* Build configuration list for PBXProject "Gist" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = 1E545FBB1E0AD7E500D19810;
+			mainGroup = CE3886DDF62A69D7914F49B8;
+			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				CE45958E2BB1CD4300884863 /* XCRemoteSwiftPackageReference "HotKey" */,
+				097EF93C666C44B1CCEAFFB0 /* XCRemoteSwiftPackageReference "HotKey" */,
 			);
-			productRefGroup = 1E545FC51E0AD7E500D19810 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E545FC31E0AD7E500D19810 /* Gist */,
-				E208F0202C69F9AD00E59F88 /* GistHelper */,
+				A3CF454D42DB81B7D461821E /* Gist */,
+				A8A8F7E6AF66BB846D3204CE /* GistHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1E545FC21E0AD7E500D19810 /* Resources */ = {
+		83E59F8E988163F19B694070 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4595852BB1C76500884863 /* NewGistViewController.xib in Resources */,
-				CE4595842BB1C76500884863 /* GistWindowController.xib in Resources */,
-				CE4595892BB1C76500884863 /* Assets.xcassets in Resources */,
-				CE4595812BB1C76500884863 /* MainMenu.xib in Resources */,
+				874998B99D6F006FFE4101CB /* Assets.xcassets in Resources */,
+				5F48AE98644BA5C0B3924621 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E208F01F2C69F9AD00E59F88 /* Resources */ = {
+		D6EB9C7A64FC87376A0C07DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E208F0282C69F9AF00E59F88 /* Assets.xcassets in Resources */,
-				E208F02B2C69F9AF00E59F88 /* Base in Resources */,
-				E208F0312C69F9F900E59F88 /* Info.plist in Resources */,
+				64C53A835DF71DDA955D7C1E /* Assets.xcassets in Resources */,
+				6F18E8F971C33F487ECA9605 /* GistWindowController.xib in Resources */,
+				85BA88B92FCC2AA60FAC2537 /* MainMenu.xib in Resources */,
+				0D6057189A77D34164D6D89C /* NewGistViewController.xib in Resources */,
+				973C73BB04A96B60A7565F00 /* GistHelper.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1E545FC01E0AD7E500D19810 /* Sources */ = {
+		561C032D2621347D4EC7C0B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863A2E3D2C9D5C31007E9A82 /* Helper.swift in Sources */,
-				CE4595872BB1C76500884863 /* CheckboxTableCellView.swift in Sources */,
-				CE4595802BB1C76500884863 /* GistTableCellView.swift in Sources */,
-				CE4595832BB1C76500884863 /* NewGistPanelView.swift in Sources */,
-				CE4595882BB1C76500884863 /* AppDelegate.swift in Sources */,
-				CE45957E2BB1C76500884863 /* Gist.swift in Sources */,
-				CE4595822BB1C76500884863 /* GistWindowController.swift in Sources */,
-				86831E262C9D27EA004750B4 /* MenuBuilder.swift in Sources */,
-				CE45957F2BB1C76500884863 /* Preference.swift in Sources */,
-				CE4595862BB1C76500884863 /* NewGistViewController.swift in Sources */,
-				CE45957D2BB1C76500884863 /* Extensions.swift in Sources */,
+				CBD4894F523793C98838E207 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E208F01D2C69F9AD00E59F88 /* Sources */ = {
+		85F44443074343640CAA82F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E208F0242C69F9AD00E59F88 /* AppDelegate.swift in Sources */,
+				4AB335F9B776ED7714E88001 /* AppDelegate.swift in Sources */,
+				5C6E08BA391B396F9FB98B95 /* CheckboxTableCellView.swift in Sources */,
+				586109BBE93C4805D6338DBB /* Extensions.swift in Sources */,
+				A9DC457BBC920BB12ED015DE /* Gist.swift in Sources */,
+				F100481BD2324DCF97CE2A47 /* GistTableCellView.swift in Sources */,
+				B94761ED154AA5C9DBA68D4E /* GistWindowController.swift in Sources */,
+				196A59D68312953EBB184C79 /* Helper.swift in Sources */,
+				2D42FEFC7DC053F2F13DDA67 /* MenuBuilder.swift in Sources */,
+				8DF9DDBF27424752C3B0EC35 /* NewGistPanelView.swift in Sources */,
+				F08F088AD3ABE7C233B0A1CF /* NewGistViewController.swift in Sources */,
+				BA86B7B0408837C9A53840C0 /* Preference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		CE4595712BB1C76500884863 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE4595722BB1C76500884863 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		2B76E6F4CFBFD64DAFB4FF41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8A8F7E6AF66BB846D3204CE /* GistHelper */;
+			targetProxy = 439D4E631C67F192EEA0F545 /* PBXContainerItemProxy */;
 		};
-		E208F0292C69F9AF00E59F88 /* Main.storyboard */ = {
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		525334CFF41BE4058EACAD40 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E208F02A2C69F9AF00E59F88 /* Base */,
+				2306D568215A098802A23D47 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		788D6EB50EE505128584362B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				057BC75301D27590394088B0 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1E545FCF1E0AD7E500D19810 /* Debug */ = {
+		0DE9D0BD939DF38E46892473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GistHelper/GistHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SM8JGRFPQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GistHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GistHelper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uwaisalqadri.app.gist.helper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		15127C345CE4D10D9E22F06C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -351,15 +384,17 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN_UNUSED_FUNCTION = YES;
+				CLANG_WARN_UNUSED_VARIABLE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -373,25 +408,67 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_MAP_FILE_PATH = "$(TARGET_TEMP_DIR)/Gist-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		167C4146CAD0E8713BCA6D57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GistHelper/GistHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SM8JGRFPQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GistHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GistHelper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uwaisalqadri.app.gist.helper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		1E545FD01E0AD7E500D19810 /* Release */ = {
+		4F2B9A78DCCAE64A49AC93E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -411,80 +488,60 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN_UNUSED_FUNCTION = YES;
+				CLANG_WARN_UNUSED_VARIABLE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_MAP_FILE_PATH = "$(TARGET_TEMP_DIR)/Gist-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-			};
-			name = Release;
-		};
-		1E545FD21E0AD7E500D19810 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Gist/Gist.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = SM8JGRFPQU;
-				INFOPLIST_FILE = "$(TARGET_NAME)/Resources/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Gist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uwaisalqadri.app.gist;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Wes's Provisioning";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		1E545FD31E0AD7E500D19810 /* Release */ = {
+		59A6FA1B4047C6B85C239452 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Gist/Gist.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = SM8JGRFPQU;
-				INFOPLIST_FILE = "$(TARGET_NAME)/Resources/Info.plist";
+				DEVELOPMENT_TEAM = SM8JGRFPQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Gist/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Gist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -493,150 +550,82 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uwaisalqadri.app.gist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Wes's Provisioning";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		E208F02E2C69F9AF00E59F88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = GistHelper/GistHelper.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = SM8JGRFPQU;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Gist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Uwais Alqadri. All rights reserved.";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uwaisalqadri.app.gist.helper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		E208F02F2C69F9AF00E59F88 /* Release */ = {
+		826483CAC4327EFE674DA7B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = GistHelper/GistHelper.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_ENTITLEMENTS = Gist/Gist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SM8JGRFPQU;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Gist/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Gist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Uwais Alqadri. All rights reserved.";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0.0;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.uwaisalqadri.app.gist.helper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uwaisalqadri.app.gist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E545FBF1E0AD7E500D19810 /* Build configuration list for PBXProject "Gist" */ = {
+		9FEA49D77E21034E24517AB6 /* Build configuration list for PBXProject "Gist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1E545FCF1E0AD7E500D19810 /* Debug */,
-				1E545FD01E0AD7E500D19810 /* Release */,
+				4F2B9A78DCCAE64A49AC93E2 /* Debug */,
+				15127C345CE4D10D9E22F06C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		1E545FD11E0AD7E500D19810 /* Build configuration list for PBXNativeTarget "Gist" */ = {
+		D627A0BF544428D943160359 /* Build configuration list for PBXNativeTarget "GistHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1E545FD21E0AD7E500D19810 /* Debug */,
-				1E545FD31E0AD7E500D19810 /* Release */,
+				167C4146CAD0E8713BCA6D57 /* Debug */,
+				0DE9D0BD939DF38E46892473 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		E208F02D2C69F9AF00E59F88 /* Build configuration list for PBXNativeTarget "GistHelper" */ = {
+		E18E62498825617D8307384F /* Build configuration list for PBXNativeTarget "Gist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E208F02E2C69F9AF00E59F88 /* Debug */,
-				E208F02F2C69F9AF00E59F88 /* Release */,
+				59A6FA1B4047C6B85C239452 /* Debug */,
+				826483CAC4327EFE674DA7B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE45958E2BB1CD4300884863 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+		097EF93C666C44B1CCEAFFB0 /* XCRemoteSwiftPackageReference "HotKey" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey";
 			requirement = {
@@ -647,12 +636,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE45958F2BB1CD4300884863 /* HotKey */ = {
+		952F5CDA5BFBA583CCF3091E /* HotKey */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CE45958E2BB1CD4300884863 /* XCRemoteSwiftPackageReference "HotKey" */;
+			package = 097EF93C666C44B1CCEAFFB0 /* XCRemoteSwiftPackageReference "HotKey" */;
 			productName = HotKey;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 1E545FBC1E0AD7E500D19810 /* Project object */;
+	rootObject = E6E756086AF2884EE3361C95 /* Project object */;
 }

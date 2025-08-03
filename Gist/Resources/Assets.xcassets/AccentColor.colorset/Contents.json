@@ -1,7 +1,6 @@
 {
-  "images" : [
+  "colors" : [
     {
-      "filename" : "checkmark.square.fill.png",
       "idiom" : "universal"
     }
   ],

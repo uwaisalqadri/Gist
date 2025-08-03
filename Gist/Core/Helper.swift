@@ -11,7 +11,7 @@ import ServiceManagement
 
 /// Representation of GistHelper Module
 struct GistHelper {
-  static let identifier = "com.nazaralwi.app.gist.helper"
+  static let identifier = "com.uwaisalqadri.app.gist.helper"
   
   private init() {}
   
