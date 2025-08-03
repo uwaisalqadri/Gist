@@ -1,4 +1,7 @@
-# 📝 Gist
+
+<img width="250" height="250" alt="1024" src="https://github.com/user-attachments/assets/6d911f6d-4b3d-477f-bc23-83f52ee4c697" />
+
+# Gist
 
 Gist is a macOS todo app with simple functionality created so people don't have to spend so much time writing todos. It's intuitive, easy to use, and light!
 
