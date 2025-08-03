@@ -3,7 +3,7 @@
 //  GistHelper
 //
 //  Created by Macintosh on 12/08/24.
-//  Copyright © 2024 github:uwaisalqadri. All rights reserved.
+//  Copyright © 2024 Uwais Alqadri. All rights reserved.
 //
 
 import Cocoa

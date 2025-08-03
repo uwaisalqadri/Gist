@@ -3,7 +3,7 @@
 //  Gist
 //
 //  Created by Uwais Alqadri on 20/09/24.
-//  Copyright © 2024 github:uwaisalqadri. All rights reserved.
+//  Copyright © 2024 Uwais Alqadri. All rights reserved.
 //
 
 import Foundation
