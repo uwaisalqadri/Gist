@@ -8,7 +8,9 @@
 
 import Cocoa
 
-final class Gist: NSObject, NSCoding {
+final class Gist: NSObject, NSSecureCoding {
+  static var supportsSecureCoding: Bool = true
+  
   var title: String
   var isCompleted = false
   
@@ -17,7 +19,7 @@ final class Gist: NSObject, NSCoding {
   }
   
   init?(coder aDecoder: NSCoder) {
-    self.title = (aDecoder.decodeObject(forKey: "title") as? String) ?? ""
+    self.title = aDecoder.decodeObject(of: NSString.self, forKey: "title") as String? ?? ""
     self.isCompleted = aDecoder.decodeBool(forKey: "isCompleted")
   }
   

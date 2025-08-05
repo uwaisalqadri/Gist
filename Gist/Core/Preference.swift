@@ -17,8 +17,8 @@ final class Preference {
   
   private init() {
     if let data = UserDefaults.standard.object(forKey: itemsKey) as? Data,
-       let unarchivedObjects = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [Gist.self], from: data),
-       let items = unarchivedObjects as? [Gist] {
+       let items = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSArray.self, Gist.self], from: data) as? [Gist],
+       let items {
       gists = items
     }
   }
@@ -50,8 +50,9 @@ final class Preference {
   }
   
   private func synchronize() {
-    if let data = try? NSKeyedArchiver.archivedData(withRootObject: gists, requiringSecureCoding: false) {
+    if let data = try? NSKeyedArchiver.archivedData(withRootObject: gists, requiringSecureCoding: true) {
       UserDefaults.standard.set(data, forKey: itemsKey)
+      UserDefaults.standard.synchronize()
     }
   }
 }
