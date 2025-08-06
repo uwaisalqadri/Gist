@@ -44,7 +44,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
   }
 
   private func showFloatingPanel() {
+    // Close existing panel if open
+    if let existingPanel = newEntryPanel {
+      existingPanel.close()
+    }
+    
     newEntryPanel = FloatingPanel(contentRect: NSRect(x: 0, y: 0, width: 512, height: 80), backing: .buffered, defer: false)
+    newEntryPanel.appDelegate = self
     
     let contentView = NewGistPanelView(
       onSave: { newGist in
@@ -62,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     ).edgesIgnoringSafeArea(.top)
     
     let hostedView = NSHostingView(rootView: contentView)
-    hostedView.layer?.cornerRadius = 16
+    hostedView.layer?.cornerRadius = 10
     newEntryPanel.contentView = hostedView
     
     newEntryPanel.center()
@@ -78,7 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     }
   }
   
-  private func hideFloatingPanelWithAnimation() {
+  func hideFloatingPanelWithAnimation() {
     guard let panel = newEntryPanel else {
       return
     }
