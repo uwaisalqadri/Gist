@@ -49,6 +49,12 @@ final class Preference {
     synchronize()
   }
   
+  func importGists(from fileURL: URL) throws {
+    let importedGists = try MarkdownImporter.importGists(from: fileURL)
+    gists.append(contentsOf: importedGists)
+    synchronize()
+  }
+  
   private func synchronize() {
     if let data = try? NSKeyedArchiver.archivedData(withRootObject: gists, requiringSecureCoding: true) {
       UserDefaults.standard.set(data, forKey: itemsKey)
