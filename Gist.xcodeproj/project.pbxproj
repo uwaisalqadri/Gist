@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0D6057189A77D34164D6D89C /* NewGistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0BFE8A64096BABDF1D9526 /* NewGistViewController.xib */; };
 		196A59D68312953EBB184C79 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9192AD7AE86D1A6B83052 /* Helper.swift */; };
+		2357ED5BF27199C37B4A50E7 /* MarkdownImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B8D0669785AACD6A1D99 /* MarkdownImporter.swift */; };
 		2D42FEFC7DC053F2F13DDA67 /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE81CACE7B7A215EE34D72C /* MenuBuilder.swift */; };
 		4AB335F9B776ED7714E88001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B9556F3BC3F1536B39499 /* AppDelegate.swift */; };
 		586109BBE93C4805D6338DBB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57467CB9D81B3238606BA2FB /* Extensions.swift */; };
@@ -52,6 +53,7 @@
 		638BAAC7E5548F0470C4770A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76AF2D48C72CD67289DBD5C4 /* CheckboxTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTableCellView.swift; sourceTree = "<group>"; };
 		7AFE33C74EEB6ABEAEE0098C /* Gist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gist.entitlements; sourceTree = "<group>"; };
+		7FA1B8D0669785AACD6A1D99 /* MarkdownImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownImporter.swift; sourceTree = "<group>"; };
 		98554FA102E49464F9C11A7C /* GistHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GistHelper.entitlements; sourceTree = "<group>"; };
 		9D41728FC12B48034E0411CB /* GistWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistWindowController.xib; sourceTree = "<group>"; };
 		A5487E63B7E13009B50346C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				57467CB9D81B3238606BA2FB /* Extensions.swift */,
 				2FABFBA30C556A44090A0469 /* Gist.swift */,
 				4FC9192AD7AE86D1A6B83052 /* Helper.swift */,
+				7FA1B8D0669785AACD6A1D99 /* MarkdownImporter.swift */,
 				2BE81CACE7B7A215EE34D72C /* MenuBuilder.swift */,
 				C4072D0F8A5EF426B0A11932 /* Preference.swift */,
 			);
@@ -208,9 +211,11 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					A3CF454D42DB81B7D461821E = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 					A8A8F7E6AF66BB846D3204CE = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -228,6 +233,7 @@
 			packageReferences = (
 				097EF93C666C44B1CCEAFFB0 /* XCRemoteSwiftPackageReference "HotKey" */,
 			);
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -281,6 +287,7 @@
 				F100481BD2324DCF97CE2A47 /* GistTableCellView.swift in Sources */,
 				B94761ED154AA5C9DBA68D4E /* GistWindowController.swift in Sources */,
 				196A59D68312953EBB184C79 /* Helper.swift in Sources */,
+				2357ED5BF27199C37B4A50E7 /* MarkdownImporter.swift in Sources */,
 				2D42FEFC7DC053F2F13DDA67 /* MenuBuilder.swift in Sources */,
 				8DF9DDBF27424752C3B0EC35 /* NewGistPanelView.swift in Sources */,
 				F08F088AD3ABE7C233B0A1CF /* NewGistViewController.swift in Sources */,
@@ -327,7 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SM8JGRFPQU;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = GistHelper/Info.plist;
@@ -431,7 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SM8JGRFPQU;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = GistHelper/Info.plist;
@@ -533,7 +540,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SM8JGRFPQU;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Gist/Resources/Info.plist;
@@ -567,7 +574,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SM8JGRFPQU;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Gist/Resources/Info.plist;

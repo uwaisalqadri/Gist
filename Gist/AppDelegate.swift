@@ -118,6 +118,7 @@ extension AppDelegate {
       .addGistItems(from: Preference.default.gists, action: #selector(menuGistPressed))
       .addSeparator()
       .addMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
+      .addMenuItem(title: "Import from Markdown...", action: #selector(menuImportPressed))
       .addMenuItem(title: "Copy completed", action: #selector(didCopyCompleted), isHidden: isCompletedEmpty)
       .addSeparator()
       .addMenuItem(title: "Open app", action: #selector(menuEditGistPressed), keyEquivalent: "E")
@@ -157,5 +158,38 @@ extension AppDelegate {
     GistHelper.registerHelperApp()
     sender.state = !GistHelper.isLaunchAtStartup ? .on : .off
     updateStatusMenu()
+  }
+  
+  @objc private func menuImportPressed(_ sender: NSMenuItem) {
+    let openPanel = NSOpenPanel()
+    openPanel.title = "Import Markdown File"
+    openPanel.canChooseFiles = true
+    openPanel.canChooseDirectories = false
+    openPanel.allowsMultipleSelection = false
+    openPanel.allowedContentTypes = [.init(filenameExtension: "md")!]
+    
+    openPanel.begin { response in
+      guard response == .OK, let url = openPanel.url else { return }
+      
+      do {
+        try Preference.default.importGists(from: url)
+        self.updateStatusItem()
+        
+        let alert = NSAlert()
+        alert.messageText = "Import Successful"
+        alert.informativeText = "Markdown file imported successfully!"
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+        
+      } catch {
+        let alert = NSAlert()
+        alert.messageText = "Import Failed"
+        alert.informativeText = "Could not import markdown file: \(error.localizedDescription)"
+        alert.alertStyle = .critical
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+      }
+    }
   }
 }
