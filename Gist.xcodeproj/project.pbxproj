@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		64C53A835DF71DDA955D7C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638BAAC7E5548F0470C4770A /* Assets.xcassets */; };
 		6F18E8F971C33F487ECA9605 /* GistWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D41728FC12B48034E0411CB /* GistWindowController.xib */; };
 		85BA88B92FCC2AA60FAC2537 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788D6EB50EE505128584362B /* MainMenu.xib */; };
+		86C1A19D2E43DAC200546733 /* KeyEscapePressModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C1A19C2E43DAC200546733 /* KeyEscapePressModifer.swift */; };
+		86C1A19F2E43DAE500546733 /* LiquidGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C1A19E2E43DAE500546733 /* LiquidGlassView.swift */; };
 		874998B99D6F006FFE4101CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A9CB6F878C749B28785CEF /* Assets.xcassets */; };
 		8DF9DDBF27424752C3B0EC35 /* NewGistPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4091FBEC61C0E1F08870247 /* NewGistPanelView.swift */; };
 		973C73BB04A96B60A7565F00 /* GistHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = AA2FE20133D868AF11A5BE9C /* GistHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -54,6 +56,8 @@
 		76AF2D48C72CD67289DBD5C4 /* CheckboxTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTableCellView.swift; sourceTree = "<group>"; };
 		7AFE33C74EEB6ABEAEE0098C /* Gist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gist.entitlements; sourceTree = "<group>"; };
 		7FA1B8D0669785AACD6A1D99 /* MarkdownImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownImporter.swift; sourceTree = "<group>"; };
+		86C1A19C2E43DAC200546733 /* KeyEscapePressModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEscapePressModifer.swift; sourceTree = "<group>"; };
+		86C1A19E2E43DAE500546733 /* LiquidGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassView.swift; sourceTree = "<group>"; };
 		98554FA102E49464F9C11A7C /* GistHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GistHelper.entitlements; sourceTree = "<group>"; };
 		9D41728FC12B48034E0411CB /* GistWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistWindowController.xib; sourceTree = "<group>"; };
 		A5487E63B7E13009B50346C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				F4091FBEC61C0E1F08870247 /* NewGistPanelView.swift */,
 				AC127C1FBA92206D3793E05A /* NewGistViewController.swift */,
 				BE0BFE8A64096BABDF1D9526 /* NewGistViewController.xib */,
+				86C1A19C2E43DAC200546733 /* KeyEscapePressModifer.swift */,
+				86C1A19E2E43DAE500546733 /* LiquidGlassView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,7 +239,6 @@
 			packageReferences = (
 				097EF93C666C44B1CCEAFFB0 /* XCRemoteSwiftPackageReference "HotKey" */,
 			);
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -290,8 +295,10 @@
 				2357ED5BF27199C37B4A50E7 /* MarkdownImporter.swift in Sources */,
 				2D42FEFC7DC053F2F13DDA67 /* MenuBuilder.swift in Sources */,
 				8DF9DDBF27424752C3B0EC35 /* NewGistPanelView.swift in Sources */,
+				86C1A19D2E43DAC200546733 /* KeyEscapePressModifer.swift in Sources */,
 				F08F088AD3ABE7C233B0A1CF /* NewGistViewController.swift in Sources */,
 				BA86B7B0408837C9A53840C0 /* Preference.swift in Sources */,
+				86C1A19F2E43DAE500546733 /* LiquidGlassView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
