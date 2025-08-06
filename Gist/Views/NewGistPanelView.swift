@@ -17,7 +17,7 @@ struct NewGistPanelView: View {
   
   var body: some View {
     HStack {
-      Image(systemName: "text.badge.checkmark")
+      Image(systemName: "checkmark.square.fill")
         .resizable()
         .frame(width: 20, height: 18)
         .foregroundColor(Color(NSColor.lightGray.withAlphaComponent(0.3)))
@@ -40,10 +40,10 @@ struct NewGistPanelView: View {
       }.buttonStyle(.plain)
       
     }
-    .padding(.vertical, 2)
+    .padding(.vertical, 4)
     .padding(.horizontal)
     .background(VisualEffectView(material: .popover, blendingMode: .withinWindow))
-    .cornerRadius(8)
+    .clipShape(.rect(cornerRadius: 16))
     .onAppear {
       isTextFieldFocused = true
     }

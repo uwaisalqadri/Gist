@@ -49,15 +49,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     let contentView = NewGistPanelView(
       onSave: { newGist in
         guard !newGist.isEmpty else {
-          self.newEntryPanel.close()
+          self.hideFloatingPanelWithAnimation()
           return
         }
         Preference.default.addGist(title: newGist)
         self.updateStatusItem()
-        self.newEntryPanel.close()
+        self.hideFloatingPanelWithAnimation()
       },
       onCancel: {
-        self.newEntryPanel.close()
+        self.hideFloatingPanelWithAnimation()
       }
     ).edgesIgnoringSafeArea(.top)
     
@@ -66,8 +66,31 @@ class AppDelegate: NSObject, NSApplicationDelegate, GistWindowControllerDelegate
     newEntryPanel.contentView = hostedView
     
     newEntryPanel.center()
+    newEntryPanel.alphaValue = 0
     newEntryPanel.orderFront(nil)
     newEntryPanel.makeKey()
+    
+    NSAnimationContext.runAnimationGroup { context in
+      context.duration = 0.15
+      context.timingFunction = CAMediaTimingFunction(name: "easeOut")
+      newEntryPanel.animator().alphaValue = 1.0
+      newEntryPanel.animator().setFrame(newEntryPanel.frame.offsetBy(dx: 0, dy: 10), display: true)
+    }
+  }
+  
+  private func hideFloatingPanelWithAnimation() {
+    guard let panel = newEntryPanel else {
+      return
+    }
+    
+    NSAnimationContext.runAnimationGroup({ context in
+      context.duration = 0.15
+      context.timingFunction = CAMediaTimingFunction(name: "easeIn")
+      panel.animator().alphaValue = 0.0
+      panel.animator().setFrame(panel.frame.offsetBy(dx: 0, dy: -10), display: true)
+    }) {
+      panel.close()
+    }
   }
   
   private func showMainWindow() {
@@ -118,7 +141,7 @@ extension AppDelegate {
       .addGistItems(from: Preference.default.gists, action: #selector(menuGistPressed))
       .addSeparator()
       .addMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
-      .addMenuItem(title: "Import from Markdown...", action: #selector(menuImportPressed))
+//      .addMenuItem(title: "Import from Markdown...", action: #selector(menuImportPressed))
       .addMenuItem(title: "Copy completed", action: #selector(didCopyCompleted), isHidden: isCompletedEmpty)
       .addSeparator()
       .addMenuItem(title: "Open app", action: #selector(menuEditGistPressed), keyEquivalent: "E")
