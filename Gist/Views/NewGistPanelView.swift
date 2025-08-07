@@ -36,7 +36,7 @@ struct NewGistPanelView: View {
         Image(systemName: "xmark.circle.fill")
           .resizable()
           .frame(width: 17, height: 17)
-          .foregroundColor(Color(NSColor.lightGray))
+          .foregroundColor(Color(NSColor.white))
       }.buttonStyle(.plain)
       
     }
