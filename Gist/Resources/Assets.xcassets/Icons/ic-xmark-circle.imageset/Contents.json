@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "checkmark.square.fill.png",
+      "filename" : "xmark-circle.svg",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

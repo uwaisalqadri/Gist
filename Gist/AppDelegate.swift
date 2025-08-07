@@ -136,8 +136,8 @@ extension AppDelegate {
     let totalCount = items.count
     let completedCount = items.filter(\.isCompleted).count
     
-    button.image = .init(named: .init("checkmark.square.fill"))?.tint(color: .white)
-    button.image?.size = .init(width: 20, height: 17)
+    button.image = .init(.icCheckmarkBox)?.tint(color: .white)
+    button.image?.size = .init(width: 20, height: 20)
     button.title = " \(completedCount)/\(totalCount)"
   }
   

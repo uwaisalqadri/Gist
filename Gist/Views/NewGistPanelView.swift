@@ -17,9 +17,10 @@ struct NewGistPanelView: View {
   
   var body: some View {
     HStack {
-      Image(systemName: "checkmark.square.fill")
+      Image(.icCheckmarkBox)
         .resizable()
-        .frame(width: 20, height: 18)
+        .renderingMode(.template)
+        .frame(width: 23, height: 23)
         .foregroundColor(Color(NSColor.lightGray.withAlphaComponent(0.3)))
       
       TextField("Add new gist...", text: $searchText, onCommit: {
@@ -33,7 +34,8 @@ struct NewGistPanelView: View {
         .background(Color.clear)
       
       Button(action: onCancel) {
-        Image(systemName: "xmark.circle.fill")
+        Image(.icXmarkCircle)
+          .renderingMode(.template)
           .resizable()
           .frame(width: 17, height: 17)
           .foregroundColor(Color(NSColor.white))
