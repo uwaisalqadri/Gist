@@ -196,6 +196,10 @@ extension AppDelegate {
     openPanel.canChooseDirectories = false
     openPanel.allowsMultipleSelection = false
     openPanel.allowedContentTypes = [.init(filenameExtension: "md")!]
+    openPanel.level = .floating
+    openPanel.orderFrontRegardless()
+    
+    NSApp.activate(ignoringOtherApps: true)
     
     openPanel.begin { response in
       guard response == .OK, let url = openPanel.url else { return }
