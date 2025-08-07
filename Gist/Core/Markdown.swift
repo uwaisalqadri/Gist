@@ -1,14 +1,14 @@
 //
-//  MarkdownImporter.swift
+//  Markdown.swift
 //  Gist
 //
-//  Created by Claude on 8/6/25.
+//  Created by Uwais Alqadri on 8/6/25.
 //  Copyright © 2025 Uwais Alqadri. All rights reserved.
 //
 
 import Foundation
 
-final class MarkdownImporter {
+final class Markdown {
   
   static func importGists(from fileURL: URL) throws -> [Gist] {
     let content = try String(contentsOf: fileURL, encoding: .utf8)
@@ -36,7 +36,7 @@ final class MarkdownImporter {
   }
   
   private static func parseCheckboxItem(_ line: String) -> Gist? {
-    let checkboxPattern = "^-\\s*\\[([ xX])\\]\\s*(.+)$"
+    let checkboxPattern = "^[-*]\\s*\\[([ xX])\\]\\s*(.+)$"
     guard let regex = try? NSRegularExpression(pattern: checkboxPattern),
           let match = regex.firstMatch(in: line, range: NSRange(location: 0, length: line.count)) else {
       return nil

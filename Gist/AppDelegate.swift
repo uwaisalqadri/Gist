@@ -147,7 +147,7 @@ extension AppDelegate {
       .addGistItems(from: Preference.default.gists, action: #selector(menuGistPressed))
       .addSeparator()
       .addMenuItem(title: "Add new gist", action: #selector(menuAddGistPressed), keyEquivalent: "G")
-//      .addMenuItem(title: "Import from Markdown...", action: #selector(menuImportPressed))
+      .addMenuItem(title: "Import from Markdown...", action: #selector(menuImportPressed))
       .addMenuItem(title: "Copy completed", action: #selector(didCopyCompleted), isHidden: isCompletedEmpty)
       .addSeparator()
       .addMenuItem(title: "Open app", action: #selector(menuEditGistPressed), keyEquivalent: "E")

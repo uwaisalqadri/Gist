@@ -50,7 +50,7 @@ final class Preference {
   }
   
   func importGists(from fileURL: URL) throws {
-    let importedGists = try MarkdownImporter.importGists(from: fileURL)
+    let importedGists = try Markdown.importGists(from: fileURL)
     gists.append(contentsOf: importedGists)
     synchronize()
   }
