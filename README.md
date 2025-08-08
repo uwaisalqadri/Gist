@@ -1,38 +1,5 @@
-
-<img width="250" height="250" alt="1024" src="https://github.com/user-attachments/assets/6d911f6d-4b3d-477f-bc23-83f52ee4c697" />
+<img width="250" height="250" alt="ChatGPT Image Aug 7, 2025, 03_15_42 PM 1 (3)" src="https://github.com/user-attachments/assets/0025fb75-ed99-4473-b64d-b866dcc2001b" />
 
 # Gist
 
 Gist is a macOS todo app with simple functionality created so people don't have to spend so much time writing todos. It's intuitive, easy to use, and light!
-
-### Features
-
-- Quick access to todo list, always visible on the status bar.
-- Quick checklist by clicking the todo item.
-- Quick access for adding todo without distracting focus (similar to Spotlight search).
-- Hotkeys to open the app.
-
-### Screenshots
-
-| Gist Edit Window                           | Gist Status Bar                           | Gist Quick Add                           |
-|----------------------------------------|----------------------------------------|----------------------------------------|
-|  |  |  |
-
-## Download Versions
-
-## **1.0.1: Coming Soon!**
-
-> **Changelog:**
-- Copy completed task for your report
-- Group task and todo by project
-**- If you have any feature request please contact me at [uwaisalqadri654321@gmail.com](mailto:uwaisalqadri654321@gmail.com) or DM me on [LinkedIn](https://www.linkedin.com/in/uwais-alqadri-7a5398180/) or Open issue on [Github](https://github.com/uwaisalqadri/Gist)**
-> 
-
-## **1.0.0: [Download here](https://github.com/uwaisalqadri/Gist/releases/download/1.0.0/Gist.zip)**
-
-> **Changelog:**
-- Quick access to todo list, always visible on the status bar.
-- Quick checklist by clicking the todo item.
-- Quick access for adding todo without distracting focus (similar to Spotlight search).
-- Hotkeys to open the app.
->
